@@ -58,6 +58,12 @@
     <Filter Include="playGround\tileMap">
       <UniqueIdentifier>{32067a7f-5f9e-4986-9ede-5671c1f7f1b3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="playGround\character">
+      <UniqueIdentifier>{4b583216-cf4d-4f37-b50d-8e91184100dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="playGround\poketmonManager">
+      <UniqueIdentifier>{8a795f48-89f8-4de5-98a2-b47b6656cada}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -144,6 +150,15 @@
     <ClInclude Include="uiManager.h">
       <Filter>2DGameFramework\Manager</Filter>
     </ClInclude>
+    <ClInclude Include="character.h">
+      <Filter>playGround\character</Filter>
+    </ClInclude>
+    <ClInclude Include="poketmonManager.h">
+      <Filter>playGround\poketmonManager</Filter>
+    </ClInclude>
+    <ClInclude Include="poketmon.h">
+      <Filter>playGround\poketmonManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowsAPI.cpp">
@@ -217,6 +232,15 @@
     </ClCompile>
     <ClCompile Include="uiManager.cpp">
       <Filter>2DGameFramework\Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="character.cpp">
+      <Filter>playGround\character</Filter>
+    </ClCompile>
+    <ClCompile Include="poketmonManager.cpp">
+      <Filter>playGround\poketmonManager</Filter>
+    </ClCompile>
+    <ClCompile Include="poketmon.cpp">
+      <Filter>playGround\poketmonManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

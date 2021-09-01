@@ -151,6 +151,7 @@
     <ClInclude Include="animation.h" />
     <ClInclude Include="bullets.h" />
     <ClInclude Include="button.h" />
+    <ClInclude Include="character.h" />
     <ClInclude Include="commonMacroFunction.h" />
     <ClInclude Include="effect.h" />
     <ClInclude Include="effectManager.h" />
@@ -162,6 +163,8 @@
     <ClInclude Include="keyManager.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="playGround.h" />
+    <ClInclude Include="poketmon.h" />
+    <ClInclude Include="poketmonManager.h" />
     <ClInclude Include="progressBar.h" />
     <ClInclude Include="randomFunction.h" />
     <ClInclude Include="Resource.h" />
@@ -181,6 +184,7 @@
     <ClCompile Include="animation.cpp" />
     <ClCompile Include="bullets.cpp" />
     <ClCompile Include="button.cpp" />
+    <ClCompile Include="character.cpp" />
     <ClCompile Include="effect.cpp" />
     <ClCompile Include="effectManager.cpp" />
     <ClCompile Include="gameNode.cpp" />
@@ -196,6 +200,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="playGround.cpp" />
+    <ClCompile Include="poketmon.cpp" />
+    <ClCompile Include="poketmonManager.cpp" />
     <ClCompile Include="progressBar.cpp" />
     <ClCompile Include="sceneManager.cpp" />
     <ClCompile Include="soundManager.cpp" />
