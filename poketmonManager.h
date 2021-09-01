@@ -26,3 +26,7 @@ public:
 	void setCharacterMemoryAddressLink(character* character) { _character = character; }		// 皋葛府 林家 傅农
 };
 
+class poketmonManager
+{
+};
+

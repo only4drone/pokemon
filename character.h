@@ -88,4 +88,3 @@ public:
 	void setPoketmonManagerMemoryAddressLink(poketmonManager* pM) { _pM = pM; }		// 皋葛府 林家 傅农
 
 };
-
