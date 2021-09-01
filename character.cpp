@@ -111,15 +111,15 @@ void character::imageSetting() // 현재 이미지 세팅
         case static_cast<int>(STATE::IDLE_RL) :
             _image = IMAGEMANAGER->findImage("아이들_좌우");
             break;
-            case static_cast<int>(STATE::IDLE_UD) :
-                _image = IMAGEMANAGER->findImage("아이들_상하");
-                break;
-                case static_cast<int>(STATE::RUN_RL) :
-                    _image = IMAGEMANAGER->findImage("걷기_좌우");
-                    break;
-                    case static_cast<int>(STATE::RUN_UD) :
-                        _image = IMAGEMANAGER->findImage("걷기_상하");
-                        break;
+        case static_cast<int>(STATE::IDLE_UD) :
+            _image = IMAGEMANAGER->findImage("아이들_상하");
+            break;
+        case static_cast<int>(STATE::RUN_RL) :
+            _image = IMAGEMANAGER->findImage("걷기_좌우");
+            break;
+        case static_cast<int>(STATE::RUN_UD) :
+            _image = IMAGEMANAGER->findImage("걷기_상하");
+            break;
     }
 }
 

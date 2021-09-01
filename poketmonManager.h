@@ -21,7 +21,7 @@ public:
 	virtual void render();			//그리기 함수
 
 	void poketmonImage();										// 포켓몬 이미지 추가
-
+	void poketmonSpawn();										// 포켓몬 생성
 
 	void setCharacterMemoryAddressLink(character* character) { _character = character; }		// 메모리 주소 링크
 };

@@ -26,7 +26,9 @@ void poketmon::update()
 
 void poketmon::attackAI()
 {
+
 }
+
 
 void poketmon::render()
 {

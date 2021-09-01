@@ -29,6 +29,11 @@ void poketmonManager::update()
 
 }
 
+void poketmonManager::poketmonSpawn()
+{
+
+}
+
 void poketmonManager::render()
 {
 
@@ -63,3 +68,5 @@ void poketmonManager::poketmonImage()
     IMAGEMANAGER->addFrameImage("독침붕_앞", "image/poketmon/포켓몬_독침붕_앞.bmp", 112, 112, 1, 1, true, RGB(255, 0, 255));
 
 }
+
+
