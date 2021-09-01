@@ -25,6 +25,7 @@ using namespace std;
 #include "utils.h"
 #include "txtData.h"
 #include "iniDataManager.h"
+#include "uiManager.h"
 
 using namespace TN_UTILS;
 
@@ -49,6 +50,7 @@ using namespace TN_UTILS;
 #define KEYANIMANAGER keyAniManager::getSingleton()
 #define TXTDATA txtData::getSingleton()
 #define INIDATA iniDataManager::getSingleton()
+#define UIMANAGER uiManager::getSingleton()
 
 
 #define SAFE_DELETE(p) {if(p) {delete(p); (p) = nullptr;}}

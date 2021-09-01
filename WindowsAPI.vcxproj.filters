@@ -141,6 +141,9 @@
     <ClInclude Include="tileMap.h">
       <Filter>playGround\tileMap</Filter>
     </ClInclude>
+    <ClInclude Include="uiManager.h">
+      <Filter>2DGameFramework\Manager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowsAPI.cpp">
@@ -211,6 +214,9 @@
     </ClCompile>
     <ClCompile Include="tileMap.cpp">
       <Filter>playGround\tileMap</Filter>
+    </ClCompile>
+    <ClCompile Include="uiManager.cpp">
+      <Filter>2DGameFramework\Manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
