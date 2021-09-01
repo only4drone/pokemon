@@ -38,22 +38,22 @@ void tileMap::update()
 	//움직이는 키(삭제 예정)
 	if (KEYMANAGER->isStayKeyDown(VK_LEFT))
 	{
-		_direction = LEFT;
+		if (_cameraY % 64 == 0) _direction = LEFT;
 		moveX();
 	}
 	if (KEYMANAGER->isStayKeyDown(VK_RIGHT))
 	{
-		_direction = RIGHT;
+		if (_cameraY % 64 == 0)_direction = RIGHT;
 		moveX();
 	}
 	if (KEYMANAGER->isStayKeyDown(VK_UP))
 	{
-		_direction = TOP;
+		if (_cameraX % 64 == 0) _direction = TOP;
 		moveY();
 	}
 	if (KEYMANAGER->isStayKeyDown(VK_DOWN))
 	{
-		_direction = BOTTOM;
+		if (_cameraX % 64 == 0) _direction = BOTTOM;
 		moveY();
 	}
 	//저장과 불러오기
@@ -80,7 +80,8 @@ void tileMap::render()
 	for (int i = 0; i < TILE; i++)
 	{
 			if (_tile[i].type == TILETYPE_CLOSE) continue;
-
+			if (_tile[i].rc.left > WINSIZEX || _tile[i].rc.right < 0 || _tile[i].rc.top > WINSIZEY || _tile[i].rc.bottom < 0) continue;
+	
 			if (_tile[i].type == TILETYPE_OPEN)
 			{
 				HBRUSH brush = CreateSolidBrush(RGB(255, 0, 0));
@@ -89,7 +90,7 @@ void tileMap::render()
 				SelectObject(getMemDC(), oldBrush);
 				DeleteObject(brush);
 			}
-
+	
 			if (_tile[i].type == TILETYPE_GRASS)
 			{
 				HBRUSH brush = CreateSolidBrush(RGB(0, 255, 0));
@@ -98,7 +99,7 @@ void tileMap::render()
 				SelectObject(getMemDC(), oldBrush);
 				DeleteObject(brush);
 			}
-
+	
 			if (_tile[i].type == TILETYPE_DOOR)
 			{
 				HBRUSH brush = CreateSolidBrush(RGB(0, 0, 255));
@@ -107,7 +108,7 @@ void tileMap::render()
 				SelectObject(getMemDC(), oldBrush);
 				DeleteObject(brush);
 			}
-
+	
 			if (_tile[i].type == TILETYPE_LEFTSLOPE)
 			{
 				HBRUSH brush = CreateSolidBrush(RGB(125, 0, 0));
@@ -116,7 +117,7 @@ void tileMap::render()
 				SelectObject(getMemDC(), oldBrush);
 				DeleteObject(brush);
 			}
-
+	
 			if (_tile[i].type == TILETYPE_RIGHTSLOPE)
 			{
 				HBRUSH brush = CreateSolidBrush(RGB(0, 125, 0));
@@ -125,7 +126,7 @@ void tileMap::render()
 				SelectObject(getMemDC(), oldBrush);
 				DeleteObject(brush);
 			}
-
+	
 			if (_tile[i].type == TILETYPE_BOTTOMSLOPE)
 			{
 				HBRUSH brush = CreateSolidBrush(RGB(0, 0, 125));
@@ -137,7 +138,7 @@ void tileMap::render()
 			char str[128];
 			sprintf_s(str, "cameraX : %d", _cameraX);
 			TextOut(getMemDC(), 100, 100, str,strlen(str));
-
+	
 			sprintf_s(str, "cameraY : %d", _cameraY);
 			TextOut(getMemDC(), 100, 130, str, strlen(str));
 	}
