@@ -1,19 +1,26 @@
 #pragma once
 #include "gameNode.h"
 
-class inGameScene : public gameNode
+class battleScene : public gameNode
 {
 private:
 
 
+
+
+
+
 public:
-	inGameScene();
-	~inGameScene();
+
+	battleScene();
+	~battleScene();
+
+
 
 	HRESULT init();
 	void release();
 	void update();
 	void render();
-};
 
+};
 
