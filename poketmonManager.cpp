@@ -31,7 +31,19 @@ void poketmonManager::update()
 
 void poketmonManager::poketmonSpawn()
 {
+    // 랜덤값 넣고
+    // RND->getFromIntTo(0, 10);
 
+    // 스위치문으로 벡터 담고
+    poketmon* monster;
+    monster = new chikorita;
+    monster->init();
+    _vPoketmon.push_back(monster);
+
+    //poketmon* monster;
+    //monster = new gugu;
+    //monster->init();
+    //_vPoketmon.push_back(monster);
 }
 
 void poketmonManager::render()

@@ -1,5 +1,7 @@
 #pragma once
 #include "gameNode.h"
+#include <vector>
+#include "chikorita.h"
 
 // 전방 선언
 class character;
@@ -7,6 +9,13 @@ class character;
 class poketmonManager : public gameNode
 {
 private:
+	typedef vector<poketmon*>				vPoketmon;
+	typedef vector<poketmon*>::iterator		viPoketmon;
+
+private:
+	vPoketmon _vPoketmon;
+	viPoketmon _viPoketmon;
+
 	character* _character;
 
 

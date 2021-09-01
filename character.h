@@ -12,9 +12,10 @@ enum class STATE
 	RUN_UD,									// 걷기 상하
 };
 
+// 포켓몬 속성
 enum class TYPE
 {
-	null,									// 없음
+	NONE,									// 없음
 	NOMAL,									// 노말
 	FIRE,									// 불
 	water,									// 물
