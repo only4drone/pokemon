@@ -320,9 +320,12 @@
     <ClCompile Include="rattata.cpp">
       <Filter>playGround\poketmonManager</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="spearow.cpp">
       <Filter>playGround\poketmonManager</Filter>
     </ClCompile>
+=======
+>>>>>>> origin/CJ_home
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="WindowsAPI.rc">
