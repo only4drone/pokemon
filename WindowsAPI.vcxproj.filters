@@ -177,6 +177,15 @@
     <ClInclude Include="chikorita.h">
       <Filter>playGround\poketmonManager</Filter>
     </ClInclude>
+    <ClInclude Include="cyndaquil.h">
+      <Filter>playGround\poketmonManager</Filter>
+    </ClInclude>
+    <ClInclude Include="pikachu.h">
+      <Filter>playGround\poketmonManager</Filter>
+    </ClInclude>
+    <ClInclude Include="totodile.h">
+      <Filter>playGround\poketmonManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowsAPI.cpp">
@@ -273,6 +282,15 @@
       <Filter>playGround\character</Filter>
     </ClCompile>
     <ClCompile Include="chikorita.cpp">
+      <Filter>playGround\poketmonManager</Filter>
+    </ClCompile>
+    <ClCompile Include="cyndaquil.cpp">
+      <Filter>playGround\poketmonManager</Filter>
+    </ClCompile>
+    <ClCompile Include="pikachu.cpp">
+      <Filter>playGround\poketmonManager</Filter>
+    </ClCompile>
+    <ClCompile Include="totodile.cpp">
       <Filter>playGround\poketmonManager</Filter>
     </ClCompile>
   </ItemGroup>
