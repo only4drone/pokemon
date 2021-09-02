@@ -8,6 +8,11 @@
 #include "cyndaquil.h"	//브케인
 #include "totodile.h"	//리아코
 #include "pikachu.h"	//피카츄
+#include "rattata.h"	//꼬렛
+#include "spearow.h"	//깨비참
+#include "caterpie.h"	//캐터피
+#include "weedle.h"		//뿔충이
+#include "pidgey.h"		//구구
 
 #pragma endregion
 
