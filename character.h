@@ -13,19 +13,19 @@ enum class STATE
 };
 
 // 포켓몬 속성
-enum class TYPE
-{
-	NONE,									// 없음
-	NOMAL,									// 노말
-	FIRE,									// 불
-	water,									// 물
-	REAF,									// 풀
-	ICE,									// 얼음
-
-};
+//enum class TYPE
+//{
+//	NONE,									// 없음
+//	NOMAL,									// 노말
+//	FIRE,									// 불
+//	water,									// 물
+//	REAF,									// 풀
+//	ICE,									// 얼음
+//
+//};
 
 // 캐릭터 포켓몬
-struct tagPOKETMON
+struct tagPOKETMON_PLAYER
 {
 	string name;							// 이름
 	bool gender;							// 성별
@@ -74,7 +74,7 @@ class character : public gameNode
 {
 private:
 	poketmonManager* _pM;									// 포켓몬 매니저 		
-	tagPOKETMON _poketmon[6];								// 유저가 보유한 포켓몬
+	tagPOKETMON_PLAYER _poketmon[6];						// 유저가 보유한 포켓몬
 
 	image* _image;											// 캐릭터 이미지
 	RECT _rc;												// 캐릭터 렉트

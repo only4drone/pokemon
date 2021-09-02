@@ -1,11 +1,35 @@
 #pragma once
 #include "gameNode.h"
+//포켓몬 타입
+enum class TYPE
+{
+	NONE,	//없음
+	NOMAL,	//노말
+	FIRE,	//불
+	WATER,	//물
+	GRASS,	//풀
+	ELECTR,	//전기
+	ICE,	//얼음
+	FIGHT,	//격투
+	POISON,	//독
+	GROUND,	//땅
+	FLYING,	//비행
+	PSYCHC,	//초능력
+	BUG,	//벌레
+	ROCK,	//바위
+	GHOST,	//유령
+	DRAGON,	//드래곤
+	DARK,	//악
+	STEEL,	//강철
+	FAIRY	//요정
+};
 
 // 포켓몬 데이터
 struct tagPOKETMON
 {
 	string name;							// 이름
-	bool gender;							// 성별
+	string gender;							// 성별
+	bool isGender;							// 성별 체크
 	int index;								// 인덱스 번호
 	int level;								// 포켓몬 현재 레벨
 	int	evolutionLevel;						// 진화 단계
@@ -48,6 +72,8 @@ class poketmon : public gameNode
 {
 protected:
 	tagPOKETMON _poketmon;
+	
+	TYPE _type;				//타입
 
 public:
 	poketmon();
@@ -60,6 +86,9 @@ public:
 
 	void attackAI();
 
+	void genderSettings();					//젠더 함수
 
 
+	tagPOKETMON getTagPoketmon() { return _poketmon; }	//포켓몬구조체 겟터?
+	
 };

@@ -1,7 +1,16 @@
 #pragma once
 #include "gameNode.h"
 #include <vector>
-#include "chikorita.h"
+
+#pragma region poketmon
+
+#include "chikorita.h"	//치코리타
+#include "cyndaquil.h"	//브케인
+#include "totodile.h"	//리아코
+#include "pikachu.h"	//피카츄
+
+#pragma endregion
+
 
 // 전방 선언
 class character;
