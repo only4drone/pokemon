@@ -36,29 +36,29 @@ void poketmonManager::poketmonSpawn()
 
     // 스위치문으로 벡터 담고
     
-    //치코리타
-    poketmon* monster;
-    monster = new chikorita;
-    monster->init();
-    _vPoketmon.push_back(monster);
+    ////치코리타
+    //poketmon* monster;
+    //monster = new chikorita;
+    //monster->init();
+    //_vPoketmon.push_back(monster);
 
-    //브케인
-    poketmon* monster;
-    monster = new cyndaquil;
-    monster->init();
-    _vPoketmon.push_back(monster);
+    ////브케인
+    //poketmon* monster;
+    //monster = new cyndaquil;
+    //monster->init();
+    //_vPoketmon.push_back(monster);
 
-    //리아코
-    poketmon* monster;
-    monster = new totodile;
-    monster->init();
-    _vPoketmon.push_back(monster);
+    ////리아코
+    //poketmon* monster;
+    //monster = new totodile;
+    //monster->init();
+    //_vPoketmon.push_back(monster);
 
-    //피카츄
-    poketmon* monster;
-    monster = new pikachu;
-    monster->init();
-    _vPoketmon.push_back(monster);
+    ////피카츄
+    //poketmon* monster;
+    //monster = new pikachu;
+    //monster->init();
+    //_vPoketmon.push_back(monster);
 
 }
 

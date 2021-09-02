@@ -1,8 +1,6 @@
 #pragma once
 #include "gameNode.h"
 
-#define SPEED 5.0f
-
 // 캐릭터 상태
 enum class STATE
 {
@@ -12,23 +10,36 @@ enum class STATE
 	RUN_UD,									// 걷기 상하
 };
 
-// 포켓몬 속성
-//enum class TYPE
-//{
-//	NONE,									// 없음
-//	NOMAL,									// 노말
-//	FIRE,									// 불
-//	water,									// 물
-//	REAF,									// 풀
-//	ICE,									// 얼음
-//
-//};
+//포켓몬 타입
+enum class TYPE_PLAYER
+{
+	NONE,	//없음
+	NOMAL,	//노말
+	FIRE,	//불
+	WATER,	//물
+	GRASS,	//풀
+	ELECTR,	//전기
+	ICE,	//얼음
+	FIGHT,	//격투
+	POISON,	//독
+	GROUND,	//땅
+	FLYING,	//비행
+	PSYCHC,	//초능력
+	BUG,	//벌레
+	ROCK,	//바위
+	GHOST,	//유령
+	DRAGON,	//드래곤
+	DARK,	//악
+	STEEL,	//강철
+	FAIRY	//요정
+};
 
 // 캐릭터 포켓몬
 struct tagPOKETMON_PLAYER
 {
 	string name;							// 이름
-	bool gender;							// 성별
+	string gender;							// 성별
+	bool isGender;							// 성별 체크
 	int index;								// 인덱스 번호
 	int level;								// 포켓몬 현재 레벨
 	int	evolutionLevel;						// 진화 단계
@@ -69,19 +80,19 @@ struct tagPOKETMON_PLAYER
 
 // 전방 선언
 class poketmonManager;
+class tileMap;
 
 class character : public gameNode
 {
 private:
-	poketmonManager* _pM;									// 포켓몬 매니저 		
+	poketmonManager* _pM;									// 포켓몬 매니저 클래스 		
+	tileMap* _tileMap;										// 타일맵 클래스
 	tagPOKETMON_PLAYER _poketmon[6];						// 유저가 보유한 포켓몬
 
 	image* _image;											// 캐릭터 이미지
 	RECT _rc;												// 캐릭터 렉트
 
 	float _x, _y;											// 캐릭터 중점 좌표
-	float _speed;											// 캐릭터 이동 속도
-	float _maxXY;	// 테스트용
 
 	int _state;												// 유저 상태
 	int _frameCount;										// 프레임 이미지 인터벌 카운트
@@ -110,5 +121,5 @@ public:
 	float getCharacterX() {}
 
 	void setPoketmonManagerMemoryAddressLink(poketmonManager* pM) { _pM = pM; }		// 메모리 주소 링크
-
+	void setTileMapMemoryAddressLink(tileMap* tileMap) { _tileMap = tileMap; }		// 메모리 주소 링크
 };

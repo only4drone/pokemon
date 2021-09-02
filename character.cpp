@@ -18,12 +18,11 @@ HRESULT character::init() // 인잇
 
     _direction = _isMoving = 0;
     _frameCount = _currentFrame = 0;
-    _x = WINSIZEX / 2;
+    _x = WINSIZEX / 2 + 32;
     _y = WINSIZEY / 2;
-    _speed = SPEED;
+
     _rc = RectMakeCenter(_x, _y, _image->getFrameWidth(), _image->getFrameHeight());
 
-    _maxXY = 0;
 
     return S_OK;
 }
@@ -36,61 +35,56 @@ void character::update() // 업데이트
 {
     controll();
     imageFrame();
-    move();
+    //move();
 
 
 }
 
 void character::controll() // 캐릭터 컨트롤 처리
 {
-    if (!_isMoving) // 이동 중이 아닐 때
+
+    // 걷기
+    if (KEYMANAGER->isStayKeyDown(VK_RIGHT)) // 오른쪽 이동
     {
-        // 걷기
-        if (KEYMANAGER->isStayKeyDown(VK_RIGHT)) // 오른쪽 이동
-        {
-            run(0);
-            _maxXY = _x + 10;
-        }
-
-        if (KEYMANAGER->isStayKeyDown(VK_LEFT)) // 왼쪽 이동
-        {
-            run(1);
-            _maxXY = _x - 10;
-        }
-
-        if (KEYMANAGER->isStayKeyDown(VK_DOWN))
-        {
-            run(2);
-            _maxXY = _y + 10;
-        }
-
-        if (KEYMANAGER->isStayKeyDown(VK_UP))
-        {
-            run(3);
-            _maxXY = _y - 10;
-        }
-
-        // 아이들
-        if (KEYMANAGER->isOnceKeyUp(VK_RIGHT))
-        {
-            idle(0);
-        }
-
-        if (KEYMANAGER->isOnceKeyUp(VK_LEFT))
-        {
-            idle(1);
-        }
-
-        if (KEYMANAGER->isOnceKeyUp(VK_DOWN))
-        {
-            idle(2);
-        }
-
-        if (KEYMANAGER->isOnceKeyUp(VK_UP))
-        {
-            idle(3);
-        }
+        run(0);
     }
+
+    if (KEYMANAGER->isStayKeyDown(VK_LEFT)) // 왼쪽 이동
+    {
+        run(1);
+    }
+
+    if (KEYMANAGER->isStayKeyDown(VK_DOWN))
+    {
+        run(2);
+    }
+
+    if (KEYMANAGER->isStayKeyDown(VK_UP))
+    {
+        run(3);
+    }
+
+    // 아이들
+    if (KEYMANAGER->isOnceKeyUp(VK_RIGHT))
+    {
+        idle(0);
+    }
+
+    if (KEYMANAGER->isOnceKeyUp(VK_LEFT))
+    {
+        idle(1);
+    }
+
+    if (KEYMANAGER->isOnceKeyUp(VK_DOWN))
+    {
+        idle(2);
+    }
+
+    if (KEYMANAGER->isOnceKeyUp(VK_UP))
+    {
+        idle(3);
+    }
+
 
     if (KEYMANAGER->isOnceKeyDown('Z'))
     {
@@ -177,35 +171,35 @@ void character::run(int direction) // 걷기 처리
 
 void character::move() // 좌표 이동 처리
 {
-    if (_isMoving)
-    {
-        if (_direction == 0)
-        {
-            _x += _speed;
-            if (_maxXY <= _x) _x = _maxXY, _isMoving = 0;
-        }
-        else if (_direction == 1)
-        {
-            _x -= _speed;
-            if (_maxXY >= _x) _x = _maxXY, _isMoving = 0;
-        }
-        else if (_direction == 2)
-        {
-            _y += _speed;
-            if (_maxXY <= _y) _y = _maxXY, _isMoving = 0;
-        }
-        else if (_direction == 3)
-        {
-            _y -= _speed;
-            if (_maxXY >= _y) _y = _maxXY, _isMoving = 0;
-        }
+    //if (_isMoving)
+    //{
+    //    if (_direction == 0)
+    //    {
+    //        _x += _speed;
+    //        if (_maxXY <= _x) _x = _maxXY, _isMoving = 0;
+    //    }
+    //    else if (_direction == 1)
+    //    {
+    //        _x -= _speed;
+    //        if (_maxXY >= _x) _x = _maxXY, _isMoving = 0;
+    //    }
+    //    else if (_direction == 2)
+    //    {
+    //        _y += _speed;
+    //        if (_maxXY <= _y) _y = _maxXY, _isMoving = 0;
+    //    }
+    //    else if (_direction == 3)
+    //    {
+    //        _y -= _speed;
+    //        if (_maxXY >= _y) _y = _maxXY, _isMoving = 0;
+    //    }
 
-        // 이동하려는 좌표의 중앙 좌표 값에 다다르면 멈춤
-        //if()
-        //{
+    //    // 이동하려는 좌표의 중앙 좌표 값에 다다르면 멈춤
+    //    //if()
+    //    //{
 
-        //}
-    }
+    //    //}
+    //}
 }
 
 void character::render() // 렌더
@@ -222,10 +216,10 @@ void character::render() // 렌더
 void character::imageInit() // 파일 이미지들 불러옴
 {
     // 캐릭터
-    IMAGEMANAGER->addFrameImage("아이들_좌우", "image/캐릭터_아이들_좌우.bmp", 28, 64, 1, 2, true, RGB(255, 0, 255));
-    IMAGEMANAGER->addFrameImage("아이들_상하", "image/캐릭터_아이들_상하.bmp", 28, 64, 1, 2, true, RGB(255, 0, 255));
-    IMAGEMANAGER->addFrameImage("걷기_좌우", "image/캐릭터_걷기_좌우.bmp", 56, 64, 2, 2, true, RGB(255, 0, 255));
-    IMAGEMANAGER->addFrameImage("걷기_상하", "image/캐릭터_걷기_상하.bmp", 112, 64, 4, 2, true, RGB(255, 0, 255));
+    IMAGEMANAGER->addFrameImage("아이들_좌우", "image/character_idle_RL.bmp", 56, 128, 1, 2, true, RGB(255, 0, 255));
+    IMAGEMANAGER->addFrameImage("아이들_상하", "image/character_idle_UD.bmp", 56, 128, 1, 2, true, RGB(255, 0, 255));
+    IMAGEMANAGER->addFrameImage("걷기_좌우", "image/character_run_RL.bmp", 112, 128, 2, 2, true, RGB(255, 0, 255));
+    IMAGEMANAGER->addFrameImage("걷기_상하", "image/character_run_UD.bmp", 224, 128, 4, 2, true, RGB(255, 0, 255));
 
     //포켓몬 뒤
     IMAGEMANAGER->addFrameImage("브케인_뒤", "image/poketmon/no_155B.bmp", 112, 112, 1, 1, true, RGB(255, 0, 255));

@@ -36,10 +36,12 @@ struct tagTile
 	TILETYPE	type;	//타일 속성
 };
 
+class character;
 
 class tileMap : public gameNode
 {
 private:
+	character* _character;
 
 	DIRECTION _direction;
 	image* _map;							//전체 맵 이미지
@@ -73,4 +75,7 @@ public:
 	//설정자
 	void setCameraX(int x) { _cameraX = x; }
 	void setCameraY(int y) { _cameraY = y; }
+
+
+	void setCharacterMemoryAddressLink(character* character) { _character = character; }
 };

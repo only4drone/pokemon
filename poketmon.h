@@ -1,5 +1,6 @@
 #pragma once
 #include "gameNode.h"
+
 //포켓몬 타입
 enum class TYPE
 {
@@ -73,7 +74,7 @@ class poketmon : public gameNode
 protected:
 	tagPOKETMON _poketmon;
 	
-	TYPE _type;				//타입
+
 
 public:
 	poketmon();
