@@ -2,6 +2,8 @@
 #include "poketmon.h"
 class pikachu :  public poketmon //ÇÇÄ«Ãò
 {
+private:
+
 public:
 	pikachu();
 	~pikachu();

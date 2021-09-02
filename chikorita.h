@@ -1,7 +1,6 @@
 #pragma once
 #include"poketmon.h"
 
-
 class chikorita : public poketmon
 {
 private:

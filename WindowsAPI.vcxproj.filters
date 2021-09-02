@@ -186,6 +186,18 @@
     <ClInclude Include="totodile.h">
       <Filter>playGround\poketmonManager</Filter>
     </ClInclude>
+    <ClInclude Include="caterpie.h">
+      <Filter>playGround\poketmonManager</Filter>
+    </ClInclude>
+    <ClInclude Include="weedle.h">
+      <Filter>playGround\poketmonManager</Filter>
+    </ClInclude>
+    <ClInclude Include="pidgey.h">
+      <Filter>playGround\poketmonManager</Filter>
+    </ClInclude>
+    <ClInclude Include="rattata.h">
+      <Filter>playGround\poketmonManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WindowsAPI.cpp">
@@ -291,6 +303,18 @@
       <Filter>playGround\poketmonManager</Filter>
     </ClCompile>
     <ClCompile Include="totodile.cpp">
+      <Filter>playGround\poketmonManager</Filter>
+    </ClCompile>
+    <ClCompile Include="caterpie.cpp">
+      <Filter>playGround\poketmonManager</Filter>
+    </ClCompile>
+    <ClCompile Include="weedle.cpp">
+      <Filter>playGround\poketmonManager</Filter>
+    </ClCompile>
+    <ClCompile Include="pidgey.cpp">
+      <Filter>playGround\poketmonManager</Filter>
+    </ClCompile>
+    <ClCompile Include="rattata.cpp">
       <Filter>playGround\poketmonManager</Filter>
     </ClCompile>
   </ItemGroup>
