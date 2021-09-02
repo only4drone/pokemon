@@ -19,18 +19,19 @@ HRESULT playGround::init()
 	_tileMap = new tileMap;
 	_character = new character;
 	_pM = new poketmonManager;
-
+	
 	_tileMap->setCharacterMemoryAddressLink(_character);
 	_character->setPoketmonManagerMemoryAddressLink(_pM);
 	_character->setTileMapMemoryAddressLink(_tileMap);
 	_pM->setCharacterMemoryAddressLink(_character);
-
+	
 	_tileMap->init();
 	_character->init();
 	_pM->init();
 
-
-
+	//오프닝씬
+	//SCENEMANAGER->addScene("오프닝", new openingScene);
+	//SCENEMANAGER->changeScene("오프닝");
 	
 
 	return S_OK;
@@ -53,7 +54,8 @@ void playGround::update()
 	_character->update();
 	_pM->update();
 
-	
+	//오프닝씬
+	//SCENEMANAGER->update();
 }
 
 //여기다 그려줘라!!!
@@ -65,6 +67,9 @@ void playGround::render()
 	_tileMap->render();
 	_character->render();
 	_pM->render();
+
+	//오프닝씬
+	//SCENEMANAGER->render();
 
 
 	//=============== 밑에도 건들지마라 ================
